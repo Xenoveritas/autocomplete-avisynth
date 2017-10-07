@@ -7,7 +7,7 @@
     "autocomplete",
     "avisynth"
   ],
-  "repository": "https://github.com/atom/autocomplete-avisynth",
+  "repository": "https://github.com/Xenoveritas/autocomplete-avisynth",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
