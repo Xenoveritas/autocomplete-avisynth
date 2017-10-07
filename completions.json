@@ -1,4 +1,5 @@
 {
+  "wiki": "http://avisynth.nl/index.php/",
   "control": [
     "return",
     "global",
@@ -131,8 +132,18 @@
     "YPlaneMinMaxDifference",
     "UPlaneMinMaxDifference",
     "VPlaneMinMaxDifference",
-    "Width",
-    "Height",
+    {
+      "text": "Width",
+      "description": "gets the width of a clip in pixels",
+      "wiki": "Clip_properties",
+      "returns": "int"
+    },
+    {
+      "text": "Height",
+      "description": "gets the height of a clip in pixels",
+      "wiki": "Clip_properties",
+      "returns": "int"
+    },
     "FrameCount",
     "FrameRate",
     "FrameRateNumerator",
@@ -145,12 +156,42 @@
     "IsAudioFloat",
     "IsAudioInt",
     "IsPlanar",
-    "IsRGB",
-    "IsRGB24",
-    "IsRGB32",
-    "IsYUV",
-    "IsYUY2",
-    "IsYV12",
+    {
+      "text": "IsRGB",
+      "description": "checks if a clip's colorspace is an RGB format",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
+    {
+      "text": "IsRGB24",
+      "description": "checks if a clip's colorspace is RGB24",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
+    {
+      "text": "IsRGB32",
+      "description": "checks if a clip's colorspace is RGB32",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
+    {
+      "text": "IsYUV",
+      "description": "checks if a clip's colorspace is YUV",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
+    {
+      "text": "IsYUV2",
+      "description": "checks if a clip's colorspace is YUV2",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
+    {
+      "text": "IsYV12",
+      "description": "checks if a clip's colorspace is YV12",
+      "wiki": "Clip_properties",
+      "returns": "boolean"
+    },
     "IsFieldBased",
     "IsFrameBased",
     "IsInterleaved",
@@ -162,8 +203,19 @@
     "LoadVFAPIPlugin",
     "LoadCPlugin",
     "Load_Stdcall_Plugin",
-    "AVISource", "OpenDMLSource", "AVIFileSource",
-    "DirectShowSource",
+    {
+      "text": "AviSource",
+      "description": "load a clip from an AVI file",
+      "wiki": true,
+      "returns": "clip"
+    },
+    "OpenDMLSource", "AVIFileSource",
+    {
+      "text": "DirectShowSource",
+      "description": "load a clip from a video using DirectShow",
+      "returns": "clip",
+      "wiki": true
+    },
     "ImageReader", "ImageSource", "ImageSourceAnim",
     "ImageWriter",
     "SegmentedAVISource", "SegmentedDirectShowSource",
