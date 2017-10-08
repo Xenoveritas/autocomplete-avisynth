@@ -91,7 +91,12 @@
     "String",
     "Apply",
     "Eval",
-    "Import",
+    {
+      "text": "Import",
+      "description": "import another AviSynth script",
+      "returns": "val",
+      "signature": "string"
+    },
     "Select",
     "Default",
     "Assert",
@@ -160,37 +165,43 @@
       "text": "IsRGB",
       "description": "checks if a clip's colorspace is an RGB format",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     {
       "text": "IsRGB24",
       "description": "checks if a clip's colorspace is RGB24",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     {
       "text": "IsRGB32",
       "description": "checks if a clip's colorspace is RGB32",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     {
       "text": "IsYUV",
       "description": "checks if a clip's colorspace is YUV",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     {
       "text": "IsYUV2",
       "description": "checks if a clip's colorspace is YUV2",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     {
       "text": "IsYV12",
       "description": "checks if a clip's colorspace is YV12",
       "wiki": "Clip_properties",
-      "returns": "boolean"
+      "returns": "bool",
+      "signature": "clip"
     },
     "IsFieldBased",
     "IsFrameBased",
@@ -198,18 +209,37 @@
     "GetParity",
     "HasAudio",
     "HasVideo",
-    "LoadPlugin",
-    "LoadVirtualDubPlugin",
-    "LoadVFAPIPlugin",
-    "LoadCPlugin",
-    "Load_Stdcall_Plugin",
     {
-      "text": "AviSource",
-      "description": "load a clip from an AVI file",
-      "wiki": true,
-      "returns": "clip"
+      "text": "LoadPlugin",
+      "description": "loads one or more external AviSynth plugins",
+      "wiki": "Plugins#LoadPlugin",
+      "signature": "string..."
     },
-    "OpenDMLSource", "AVIFileSource",
+    {
+      "text": "LoadVirtualDubPlugin",
+      "description": "loads a VirtualDub plugin",
+      "wiki": "Plugins#LoadVirtualDubPlugin",
+      "signature": "string"
+    },
+    {
+      "text": "LoadVFAPIPlugin",
+      "description": "loads a VFAPI plugin",
+      "wiki": "Plugins#LoadVFAPIPlugin",
+      "signature": "string"
+    },
+    {
+      "text": [ "LoadCPlugin", "Load_Stdcall_Plugin" ],
+      "description": "loads an AviSynth C plugin",
+      "wiki": "Plugins#LoadCPlugin",
+      "signature": "string"
+    },
+    {
+      "text": [ "AviSource", "OpenDMLSource", "AVIFileSource" ],
+      "description": "load a clip from an AVI file",
+      "wiki": "AviSource",
+      "returns": "clip",
+      "signature": "string filename, ..., bool [audio]=true, string [pixel_type]='FULL', string [fourCC], int [vtrack]=0, int [atrack]=0"
+    },
     {
       "text": "DirectShowSource",
       "description": "load a clip from a video using DirectShow",
@@ -219,8 +249,18 @@
     "ImageReader", "ImageSource", "ImageSourceAnim",
     "ImageWriter",
     "SegmentedAVISource", "SegmentedDirectShowSource",
-    "SoundOut",
-    "WAVSource",
+    {
+      "text": "SoundOut",
+      "description": "displays a GUI to export audio",
+      "wiki": true
+    },
+    {
+      "text": "WAVSource",
+      "description": "loads an audio-only clip",
+      "returns": "clip",
+      "wiki": "AviSource",
+      "signature": "string"
+    },
     "ColorYUV",
     "ConvertBackToYUY2", "ConvertToRGB", "ConvertToRGB24", "ConvertToRGB32",
     "ConvertToYUY2", "ConvertToY8", "ConvertToYV411", "ConvertToYV12",
