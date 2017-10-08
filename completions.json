@@ -40,57 +40,135 @@
     "Spline",
     "ContinuedNumerator",
     "ContinuedDenominator",
-    "BitAnd",
-    "BitNot",
-    "BitOr",
-    "BitXor",
-    "BitLShift",
-    "BitShl",
-    "BitSal",
-    "BitRShiftL",
-    "BitRShiftU",
-    "BitShr",
-    "BitRShiftA",
-    "BitRShiftS",
-    "BitSar",
-    "BitLRotate",
-    "BitRol",
-    "BitRRotate",
-    "BitRor",
-    "BitChange",
-    "BitChg",
-    "BitClear",
-    "BitClr",
-    "BitSet",
-    "BitTest",
-    "BitTst",
-    "LCase",
-    "UCase",
-    "StrLen",
-    "RevStr",
-    "LeftStr",
-    "RightStr",
-    "MidStr",
-    "FindStr",
-    "FillStr",
-    "StrCmp",
-    "StrCmpi",
-    "Chr",
-    "Ord",
-    "Time",
-    "IsBool",
-    "IsClip",
-    "IsFloat",
-    "IsInt",
-    "IsString",
-    "Exist",
-    "Defined",
-    "Value",
-    "HexValue",
-    "Hex",
-    "String",
-    "Apply",
-    "Eval",
+    { "text": "BitAnd" },
+    { "text": "BitNot" },
+    { "text": "BitOr" },
+    { "text": "BitXor" },
+    { "text": "BitLShift" },
+    { "text": "BitShl" },
+    { "text": "BitSal" },
+    { "text": "BitRShiftL" },
+    { "text": "BitRShiftU" },
+    { "text": "BitShr" },
+    { "text": "BitRShiftA" },
+    { "text": "BitRShiftS" },
+    { "text": "BitSar" },
+    { "text": "BitLRotate" },
+    { "text": "BitRol" },
+    { "text": "BitRRotate" },
+    { "text": "BitRor" },
+    { "text": "BitChange" },
+    { "text": "BitChg" },
+    { "text": "BitClear" },
+    { "text": "BitClr" },
+    { "text": "BitSet" },
+    { "text": "BitTest" },
+    { "text": "BitTst" },
+    { "text": "LCase" },
+    { "text": "UCase" },
+    { "text": "StrLen" },
+    { "text": "RevStr" },
+    { "text": "LeftStr" },
+    { "text": "RightStr" },
+    { "text": "MidStr" },
+    { "text": "FindStr" },
+    { "text": "FillStr" },
+    { "text": "StrCmp" },
+    { "text": "StrCmpi" },
+    { "text": "Chr" },
+    { "text": "Ord" },
+    { "text": "Time" },
+    {
+      "text": "IsBool",
+      "description": "tests if a variable is a boolean",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#IsBool"
+    },
+    {
+      "text": "IsClip",
+      "description": "tests if a variable is a clip",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#IsClip"
+    },
+    {
+      "text": "IsFloat",
+      "description": "tests if a variable is a float",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#IsFloat"
+    },
+    {
+      "text": "IsInt",
+      "description": "tests if a variable is an int",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#IsInt"
+    },
+    {
+      "text": "IsString",
+      "description": "tests if a variable is a string",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#IsString"
+    },
+    {
+      "text": "Exist",
+      "description": "check if a given file exists",
+      "signature": "string filename",
+      "returns": "bool",
+      "wiki": "Internal_functions#Exist"
+    },
+    {
+      "text": "Defined",
+      "description": "check if a variable has a defined value",
+      "signature": "val",
+      "returns": "bool",
+      "wiki": "Internal_functions#Defined"
+    },
+    {
+      "text": "Value",
+      "description": "convert a string to a numeric value",
+      "signature": "string",
+      "returns": "float",
+      "wiki": "Internal_functions#Value"
+    },
+    {
+      "text": "HexValue",
+      "description": "convert a hexadecimal string to a numeric value",
+      "signature": "string",
+      "returns": "int",
+      "wiki": "Internal_functions#HexValue"
+    },
+    {
+      "text": "Hex",
+      "description": "convert a number to a hexadecimal string",
+      "signature": "int",
+      "returns": "string",
+      "wiki": "Internal_functions#Hex"
+    },
+    {
+      "text": "String",
+      "description": "convert a value to a string",
+      "signature": "val, [string format]",
+      "returns": "string",
+      "wiki": "Internal_functions#String"
+    },
+    {
+      "text": "Apply",
+      "description": "invoke a function",
+      "signature": "string function_name, [val args...]",
+      "returns": "val",
+      "wiki": "Internal_functions#Apply"
+    },
+    {
+      "text": "Eval",
+      "description": "evaluate a string as AviSynth script",
+      "signature": "string, [string name]",
+      "returns": "val",
+      "wiki": "Internal_functions#Eval"
+    },
     {
       "text": "Import",
       "description": "import another AviSynth script",
@@ -140,14 +218,16 @@
     {
       "text": "Width",
       "description": "gets the width of a clip in pixels",
-      "wiki": "Clip_properties",
-      "returns": "int"
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties"
     },
     {
       "text": "Height",
       "description": "gets the height of a clip in pixels",
-      "wiki": "Clip_properties",
-      "returns": "int"
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties"
     },
     "FrameCount",
     "FrameRate",
@@ -164,30 +244,30 @@
     {
       "text": "IsRGB",
       "description": "checks if a clip's colorspace is an RGB format",
-      "wiki": "Clip_properties",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties"
     },
     {
       "text": "IsRGB24",
       "description": "checks if a clip's colorspace is RGB24",
-      "wiki": "Clip_properties",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties"
     },
     {
       "text": "IsRGB32",
       "description": "checks if a clip's colorspace is RGB32",
-      "wiki": "Clip_properties",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties"
     },
     {
       "text": "IsYUV",
       "description": "checks if a clip's colorspace is YUV",
-      "wiki": "Clip_properties",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties"
     },
     {
       "text": "IsYUV2",
@@ -238,7 +318,7 @@
       "description": "load a clip from an AVI file",
       "wiki": "AviSource",
       "returns": "clip",
-      "signature": "string filename, ..., bool [audio]=true, string [pixel_type]='FULL', string [fourCC], int [vtrack]=0, int [atrack]=0"
+      "signature": "string filename..., [bool audio=true], [string pixel_type='FULL'], [string fourCC], [int vtrack=0], [int atrack=0]"
     },
     {
       "text": "DirectShowSource",
@@ -246,9 +326,16 @@
       "returns": "clip",
       "wiki": true
     },
-    "ImageReader", "ImageSource", "ImageSourceAnim",
-    "ImageWriter",
-    "SegmentedAVISource", "SegmentedDirectShowSource",
+    {
+      "text": [ "ImageReader", "ImageSource" ],
+      "returns": "clip",
+      "description": "loads images as a clip",
+      "signature": "[string file], [int start], [int end], [float fps], [bool use_DevIL], [bool info], [string pixel_type]"
+    },
+    { "text": "ImageSourceAnim" },
+    { "text": "ImageWriter" },
+    { "text": "SegmentedAVISource" },
+    { "text": "SegmentedDirectShowSource" },
     {
       "text": "SoundOut",
       "description": "displays a GUI to export audio",
@@ -262,7 +349,28 @@
       "signature": "string"
     },
     "ColorYUV",
-    "ConvertBackToYUY2", "ConvertToRGB", "ConvertToRGB24", "ConvertToRGB32",
+    "ConvertBackToYUY2",
+    {
+      "text": "ConvertToRGB",
+      "description": "convert a clip to interleaved RGB",
+      "returns": "clip",
+      "signature": "clip, [string matrix], [bool interlaced], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#RGB_interleaved"
+    },
+    {
+      "text": "ConvertToRGB24",
+      "description": "convert a clip to interleaved RGB24",
+      "returns": "clip",
+      "signature": "clip, [string matrix], [bool interlaced], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#RGB_interleaved"
+    },
+    {
+      "text": "ConvertToRGB32",
+      "description": "convert a clip to interleaved ARGB32",
+      "returns": "clip",
+      "signature": "clip, [string matrix], [bool interlaced], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#RGB_interleaved"
+    },
     "ConvertToYUY2", "ConvertToY8", "ConvertToYV411", "ConvertToYV12",
     "ConvertToYV16", "ConvertToYV24",
     "FixLuminance",
@@ -364,10 +472,30 @@
     "Version"
   ],
   "variables": [
-    "OPT_AllowFloatAudio",
-    "OPT_UseWaveExtensible",
-    "OPT_VDubPlanarHack",
-    "OPT_dwChannelMask",
-    "OPT_AVIPadScanlines"
+    {
+      "text": "OPT_AllowFloatAudio",
+      "description": "set whether or not to output float audio",
+      "wiki": "Internal_functions#OPT_AllowFloatAudio"
+    },
+    {
+      "text": "OPT_UseWaveExtensible",
+      "description": "set whether or not to use WAVE_FORMAT_EXTENSIBLE",
+      "wiki": "Internal_functions#OPT_UseWaveExtensible"
+    },
+    {
+      "text": "OPT_VDubPlanarHack",
+      "description": "set to true to flip YV24 and YV16 chroma planes (for early versions of VirtualDub)",
+      "wiki": "Internal_functions#OPT_VDubPlanarHack"
+    },
+    {
+      "text": "OPT_dwChannelMask",
+      "description": "sets the dwChannelMask field in WAVE_FORMAT_EXTENSIBLE",
+      "wiki": "Internal_functions#OPT_dwChannelMask"
+    },
+    {
+      "text": "OPT_AVIPadScanlines",
+      "description": "set whether to use DWORD planar padding",
+      "wiki": "Internal_functions#OPT_AVIPadScanlines"
+    }
   ]
 }
