@@ -807,75 +807,232 @@
       "description": "gets the width of a clip in pixels",
       "signature": "clip",
       "returns": "int",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Resolution"
     },
     {
       "text": "Height",
       "description": "gets the height of a clip in pixels",
       "signature": "clip",
       "returns": "int",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Resolution"
     },
-    "FrameCount",
-    "FrameRate",
-    "FrameRateNumerator",
-    "FrameRateDenominator",
-    "AudioRate",
-    "AudioLength",
-    "AudioLengthF",
-    "AudioChannels",
-    "AudioBits",
-    "IsAudioFloat",
-    "IsAudioInt",
-    "IsPlanar",
+    {
+      "text": "FrameCount",
+      "description": "gets the total number of frames",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Framerate_and_Duration"
+    },
+    {
+      "text": "FrameRate",
+      "description": "gets the approximate frame rate",
+      "signature": "clip",
+      "returns": "float",
+      "wiki": "Clip_properties#Framerate_and_Duration"
+    },
+    {
+      "text": "FrameRateNumerator",
+      "description": "gets the exact numerator of the frame rate",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Framerate_and_Duration"
+    },
+    {
+      "text": "FrameRateDenominator",
+      "description": "gets the exact denominator of the frame rate",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Framerate_and_Duration"
+    },
+    {
+      "text": "AudioRate",
+      "description": "gets the audio sample rate",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioLength",
+      "description": "gets the number of audio samples (as a 32-bit value, may overflow)",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioLengthF",
+      "description": "gets the number of audio samples (as a floating point value, may have rounding)",
+      "signature": "clip",
+      "returns": "float",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioLengthHi",
+      "description": "gets the number of audio samples divided by d",
+      "signature": "clip, int d",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioLengthLo",
+      "description": "gets the number of audio samples modulo m",
+      "signature": "clip, int m",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioLengthS",
+      "description": "gets the number of audio samples as a string",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioChannels",
+      "description": "gets the number of audio channels",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "AudioBits",
+      "description": "gets the audio bit depth",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "IsAudioFloat",
+      "description": "gets whether audio samples are floating point",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Audio"
+    },
+    {
+      "text": "IsAudioInt",
+      "description": "gets whether audio samples are integers",
+      "signature": "clip",
+      "returns": "int",
+      "wiki": "Clip_properties#Audio"
+    },
     {
       "text": "IsRGB",
       "description": "checks if a clip's colorspace is an RGB format",
       "signature": "clip",
       "returns": "bool",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Color_Format"
     },
     {
       "text": "IsRGB24",
       "description": "checks if a clip's colorspace is RGB24",
       "signature": "clip",
       "returns": "bool",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Color_Format"
     },
     {
       "text": "IsRGB32",
       "description": "checks if a clip's colorspace is RGB32",
       "signature": "clip",
       "returns": "bool",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Color_Format"
     },
     {
       "text": "IsYUV",
       "description": "checks if a clip's colorspace is YUV",
       "signature": "clip",
       "returns": "bool",
-      "wiki": "Clip_properties"
+      "wiki": "Clip_properties#Color_Format"
     },
     {
-      "text": "IsYUV2",
-      "description": "checks if a clip's colorspace is YUV2",
-      "wiki": "Clip_properties",
+      "text": "IsYUY2",
+      "description": "checks if a clip's colorspace is YUY2",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties#Color_Format"
     },
     {
       "text": "IsYV12",
       "description": "checks if a clip's colorspace is YV12",
-      "wiki": "Clip_properties",
+      "signature": "clip",
       "returns": "bool",
-      "signature": "clip"
+      "wiki": "Clip_properties#Color_Format"
     },
-    "IsFieldBased",
-    "IsFrameBased",
-    "IsInterleaved",
-    "GetParity",
-    "HasAudio",
-    "HasVideo",
+    {
+      "text": "IsYV16",
+      "description": "checks if a clip's colorspace is YV16",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Color_Format"
+    },
+    {
+      "text": "IsYV24",
+      "description": "checks if a clip's colorspace is YV24",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Color_Format"
+    },
+    {
+      "text": "IsYV411",
+      "description": "checks if a clip's colorspace is YV411",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Color_Format"
+    },
+    {
+      "text": "PixelType",
+      "description": "gets the pixel format as a string",
+      "signature": "clip",
+      "returns": "string",
+      "wiki": "Clip_properties#Color_Format"
+    },
+    {
+      "text": "IsFieldBased",
+      "description": "gets whether the clip is field-based",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "IsFrameBased",
+      "description": "gets whether the clip is frame-based",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "IsPlanar",
+      "description": "gets whether the clip color format is planar",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "IsInterleaved",
+      "description": "gets whether the clip color format is interleaved",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "GetParity",
+      "description": "checks if on the given frame the frame is the top field (field-based) or the top field is first (frame-based)",
+      "signature": "clip, [int frame]",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "HasAudio",
+      "description": "gets whether the clip has audio",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
+    {
+      "text": "HasVideo",
+      "description": "gets whether the clip has video",
+      "signature": "clip",
+      "returns": "bool",
+      "wiki": "Clip_properties#Other_Properties"
+    },
     {
       "text": "LoadPlugin",
       "description": "loads one or more external AviSynth plugins",
