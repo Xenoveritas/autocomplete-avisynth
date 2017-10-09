@@ -7,39 +7,236 @@
     "catch"
   ],
   "functions": [
-    "Max",
-    "Min",
-    "MulDiv",
-    "Floor",
-    "Ceil",
-    "Round",
-    "Sin",
-    "Cos",
-    "Tan",
-    "Asin",
-    "Acos",
-    "Atan",
-    "Atan2",
-    "Sinh",
-    "Cosh",
-    "Tanh",
-    "Fmod",
-    "Pi",
-    "Tau",
-    "Exp",
-    "Log",
-    "Log10",
-    "Pow",
-    "Sqrt",
-    "Abs",
-    "Sign",
-    "Int",
-    "Frac",
-    "Float",
-    "Rand",
-    "Spline",
-    "ContinuedNumerator",
-    "ContinuedDenominator",
+    {
+      "text": "Max",
+      "description": "return the greatest value among all input arguments",
+      "signature": "float, float...",
+      "returns": "float",
+      "wiki": "Internal_functions#Max"
+    },
+    {
+      "text": "Min",
+      "description": "return the least value among all input arguments",
+      "signature": "float, float...",
+      "returns": "float",
+      "wiki": "Internal_functions#Min"
+    },
+    {
+      "text": "MulDiv",
+      "description": "multiplies the first two arguments and then divides by the third",
+      "signature": "int m, int n, int d",
+      "returns": "int",
+      "wiki": "Internal_functions#MulDiv"
+    },
+    {
+      "text": "Floor",
+      "description": "returns the input argument with the floating part rounded down",
+      "signature": "float",
+      "returns": "int",
+      "wiki": "Internal_functions#Floor"
+    },
+    {
+      "text": "Ceil",
+      "description": "returns the input argument with the floating part rounded up",
+      "signature": "float",
+      "returns": "int",
+      "wiki": "Internal_functions#Ceil"
+    },
+    {
+      "text": "Round",
+      "description": "returns the input argument rounded to the nearest integer",
+      "signature": "float",
+      "returns": "int",
+      "wiki": "Internal_functions#Round"
+    },
+    {
+      "text": "Sin",
+      "description": "calculates the sine of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Sin"
+    },
+    {
+      "text": "Cos",
+      "description": "calculates the cosine of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Cos"
+    },
+    {
+      "text": "Tan",
+      "description": "calculates the tangent of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Tan"
+    },
+    {
+      "text": "Asin",
+      "description": "calculates the arc sine of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Asin"
+    },
+    {
+      "text": "Acos",
+      "description": "calculates the arc cosine of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Acos"
+    },
+    {
+      "text": "Atan",
+      "description": "calculates the arc tangent of its argument (in radians)",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Atan"
+    },
+    {
+      "text": "Atan2",
+      "description": "calculates the angle (in radians) between the positive X-axis and the given point",
+      "signature": "float x, float y",
+      "returns": "float",
+      "wiki": "Internal_functions#Atan2"
+    },
+    {
+      "text": "Sinh",
+      "description": "calculates the hyperbolic sine of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Sinh"
+    },
+    {
+      "text": "Cosh",
+      "description": "calculates the hyperbolic cosine of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Cosh"
+    },
+    {
+      "text": "Tanh",
+      "description": "calculates the hyperbolic tangent of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Tanh"
+    },
+    {
+      "text": "Fmod",
+      "description": "calculates the floating point modulo",
+      "signature": "float, float",
+      "returns": "float",
+      "wiki": "Internal_functions#Fmod"
+    },
+    {
+      "text": "Pi",
+      "description": "returns \u03C0",
+      "signature": "",
+      "returns": "float",
+      "wiki": "Internal_functions#Pi"
+    },
+    {
+      "text": "Tau",
+      "description": "returns \u03C4 (which is 2\u03C0)",
+      "signature": "",
+      "returns": "float"
+    },
+    {
+      "text": "Exp",
+      "description": "returns the natural (base-e) exponent of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Exp"
+    },
+    {
+      "text": "Log",
+      "description": "returns the natural (base-e) logarithm of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Log"
+    },
+    {
+      "text": "Log10",
+      "description": "returns the common logarithm of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Log10"
+    },
+    {
+      "text": "Pow",
+      "description": "returns base raised to the given power",
+      "signature": "float base, float power",
+      "returns": "float",
+      "wiki": "Internal_functions#Pow"
+    },
+    {
+      "text": "Sqrt",
+      "description": "returns the square root of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Sqrt"
+    },
+    {
+      "text": "Abs",
+      "description": "returns the absolute value of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Abs"
+    },
+    {
+      "text": "Sign",
+      "description": "returns the sign of its argument (1, 0, or -1)",
+      "signature": "float",
+      "returns": "int",
+      "wiki": "Internal_functions#Sign"
+    },
+    {
+      "text": "Int",
+      "description": "returns the input argument rounded towards zero",
+      "signature": "float",
+      "returns": "int",
+      "wiki": "Internal_functions#Int"
+    },
+    {
+      "text": "Frac",
+      "description": "returns the fractional component of its argument",
+      "signature": "float",
+      "returns": "float",
+      "wiki": "Internal_functions#Frac"
+    },
+    {
+      "text": "Float",
+      "description": "returns the input argument as a floating point number",
+      "signature": "int",
+      "returns": "float",
+      "wiki": "Internal_functions#Float"
+    },
+    {
+      "text": "Rand",
+      "description": "returns a randomly generated number",
+      "signature": "[int max], [bool scale], [bool seed]",
+      "returns": "int",
+      "wiki": "Internal_functions#Rand"
+    },
+    {
+      "text": "Spline",
+      "description": "interpolates the Y value based on a given X for the given spline",
+      "signature": "float X, float x1, float y1, float x2, float y2..., [bool cubic]",
+      "returns": "float",
+      "wiki": "Internal_functions#Spline"
+    },
+    {
+      "text": "ContinuedNumerator",
+      "description": "calculates the numerator of a continued fraction",
+      "signature": "float, int limit",
+      "returns": "int",
+      "wiki": "Internal_functions#Continued_Numerator.2C_Denominator"
+    },
+    {
+      "text": "ContinuedDenominator",
+      "description": "calculates the denominator of a continued fraction",
+      "signature": "float, int limit",
+      "returns": "int",
+      "wiki": "Internal_functions#Continued_Numerator.2C_Denominator"
+    },
     {
       "text": "BitAnd",
       "description": "bitwise AND",
@@ -717,29 +914,59 @@
       "wiki": true
     },
     {
-      "text": [ "ImageReader", "ImageSource" ],
+      "text": [ "ImageSource", "ImageReader" ],
       "returns": "clip",
       "description": "loads images as a clip",
-      "signature": "[string file], [int start], [int end], [float fps], [bool use_DevIL], [bool info], [string pixel_type]"
+      "signature": "[string file], [int start], [int end], [float fps], [bool use_DevIL], [bool info], [string pixel_type]",
+      "wiki": "ImageSource"
     },
-    { "text": "ImageSourceAnim" },
-    { "text": "ImageWriter" },
-    { "text": "SegmentedAVISource" },
-    { "text": "SegmentedDirectShowSource" },
+    {
+      "text": "ImageSourceAnim",
+      "description": "loads an animated image source as a clip (e.g. GIF)",
+      "signature": "[string file], [float fps], [bool info], [string pixel_type='RGB32']",
+      "returns": "clip",
+      "wiki": "ImageSource"
+    },
+    {
+      "text": "ImageWriter",
+      "description": "export frames as individual images",
+      "signature": "clip, [string file], [int start], [int end], [string type], [bool info]",
+      "wiki": true
+    },
+    {
+      "text": "SegmentedAVISource",
+      "description": "load multiple AVI files and unaligned splice them together",
+      "signature": "string base_filename..., [bool audio], [string pixel_type], [int vtrack=0], [int atrack=0]",
+      "returns": "clip",
+      "wiki": "SegmentedAviSource"
+    },
+    {
+      "text": "SegmentedDirectShowSource",
+      "description": "load multiple video files through DirectShow and unaligned splice them together",
+      "signature": "string base_filename..., [float fps], [bool seek], [bool audio], [bool video], [bool convertfps], [bool seekzero], [int timeout], [string pixel_type]",
+      "returns": "clip",
+      "wiki": "SegmentedAviSource"
+    },
     {
       "text": "SoundOut",
       "description": "displays a GUI to export audio",
+      "signature": "",
       "wiki": true
     },
     {
       "text": "WAVSource",
       "description": "loads an audio-only clip",
+      "signature": "string",
       "returns": "clip",
-      "wiki": "AviSource",
-      "signature": "string"
+      "wiki": "AviSource"
     },
-    "ColorYUV",
-    "ConvertBackToYUY2",
+    {
+      "text": "ColorYUV",
+      "description": "adjust colors and luminance in a clip",
+      "signature": "clip, [float gain_y], [float off_y], [float gamma_y], [float cont_y], [float gain_u], [float off_u], [float gamma_u], [float cont_u], [float gain_v], [float off_v], [float gamma_v], [float cont_v], [string levels], [string opt], [boolean showyuv], [boolean analyze], [boolean autowhite], [boolean autogain], [boolean conditional]",
+      "returns": "clip",
+      "wiki": true
+    },
     {
       "text": "ConvertToRGB",
       "description": "convert a clip to interleaved RGB",
@@ -761,8 +988,55 @@
       "signature": "clip, [string matrix], [bool interlaced], [string ChromaInPlacement], [string chromaresample]",
       "wiki": "Convert#RGB_interleaved"
     },
-    "ConvertToYUY2", "ConvertToY8", "ConvertToYV411", "ConvertToYV12",
-    "ConvertToYV16", "ConvertToYV24",
+    {
+      "text": "ConvertToYUY2",
+      "description": "convert a clip to interleaved YUY2",
+      "returns": "clip",
+      "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#YUV422"
+    },
+    {
+      "text": "ConvertBackToYUY2",
+      "description": "convert a clip that was converted from YUY2 back to YUY2",
+      "signature": "clip, [string matrix]",
+      "returns": "clip",
+      "wiki": "Convert#YUV422"
+    },
+    {
+      "text": "ConvertToY8",
+      "description": "convert a clip to Y8 (black and white)",
+      "signature": "clip, [string matrix]",
+      "returns": "clip",
+      "wiki": "Convert#Y-only"
+    },
+    {
+      "text": "ConvertToYV411",
+      "description": "convert a clip to planar YUV411",
+      "returns": "clip",
+      "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#YUV411"
+    },
+    {
+      "text": "ConvertToYV12",
+      "description": "convert a clip to planar YUV420",
+      "returns": "clip",
+      "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample], [string ChromaOutPlacement]",
+      "wiki": "Convert#YUV420"
+    },
+    {
+      "text": "ConvertToYV16",
+      "description": "convert a clip to planar YUV422",
+      "returns": "clip",
+      "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#YUV422"
+    },
+    {
+      "text": "ConvertToYV24",
+      "description": "convert a clip to planar YUV444",
+      "returns": "clip",
+      "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample]",
+      "wiki": "Convert#YUV444"
+    },
     "FixLuminance",
     "Greyscale",
     "Invert",
@@ -834,8 +1108,35 @@
       "signature": "clip, int target_width, int target_height, [float src_left], [float src_top], [float src_width], [float src_height]",
       "returns": "clip",
       "wiki": "Resize#PointResize"
-    }, "SincResize",
-    "Spline16Resize", "Spline36Resize", "Spline64Resize",
+    },
+    {
+      "text": "SincResize",
+      "description": "resize a clip using the truncated sinc function",
+      "signature": "clip, int target_width, int target_height, [float src_left], [float src_top], [float src_width], [float src_height], [int taps=4]",
+      "returns": "clip",
+      "wiki": "Resize#SincResize"
+    },
+    {
+      "text": "Spline16Resize",
+      "description": "resize a clip using a spline algorithm with \u221A16 (4) sample points",
+      "signature": "clip, int target_width, int target_height, [float src_left], [float src_top], [float src_width], [float src_height]",
+      "returns": "clip",
+      "wiki": "Resize#Spline_based_resizers"
+    },
+    {
+      "text": "Spline36Resize",
+      "description": "resize a clip using a spline algorithm with \u221A36 (6) sample points",
+      "signature": "clip, int target_width, int target_height, [float src_left], [float src_top], [float src_width], [float src_height]",
+      "returns": "clip",
+      "wiki": "Resize#Spline_based_resizers"
+    },
+    {
+      "text": "Spline64Resize",
+      "description": "resize a clip using a spline algorithm with \u221A64 (8) sample points",
+      "signature": "clip, int target_width, int target_height, [float src_left], [float src_top], [float src_width], [float src_height]",
+      "returns": "clip",
+      "wiki": "Resize#Spline_based_resizers"
+    },
     "SkewRows",
     "TurnLeft", "TurnRight", "Turn180",
     "Blur", "Sharpen",
