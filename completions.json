@@ -137,7 +137,8 @@
       "text": "Tau",
       "description": "returns \u03C4 (which is 2\u03C0)",
       "signature": "",
-      "returns": "float"
+      "returns": "float",
+      "wiki": false
     },
     {
       "text": "Exp",
@@ -1067,8 +1068,7 @@
     {
       "text": "DirectShowSource",
       "description": "load a clip from a video using DirectShow",
-      "returns": "clip",
-      "wiki": true
+      "returns": "clip"
     },
     {
       "text": [ "ImageSource", "ImageReader" ],
@@ -1087,8 +1087,7 @@
     {
       "text": "ImageWriter",
       "description": "export frames as individual images",
-      "signature": "clip, [string file], [int start], [int end], [string type], [bool info]",
-      "wiki": true
+      "signature": "clip, [string file], [int start], [int end], [string type], [bool info]"
     },
     {
       "text": "SegmentedAVISource",
@@ -1107,8 +1106,7 @@
     {
       "text": "SoundOut",
       "description": "displays a GUI to export audio",
-      "signature": "",
-      "wiki": true
+      "signature": ""
     },
     {
       "text": "WAVSource",
@@ -1121,8 +1119,7 @@
       "text": "ColorYUV",
       "description": "adjust colors and luminance in a clip",
       "signature": "clip, [float gain_y], [float off_y], [float gamma_y], [float cont_y], [float gain_u], [float off_u], [float gamma_u], [float cont_u], [float gain_v], [float off_v], [float gamma_v], [float cont_v], [string levels], [string opt], [boolean showyuv], [boolean analyze], [boolean autowhite], [boolean autogain], [boolean conditional]",
-      "returns": "clip",
-      "wiki": true
+      "returns": "clip"
     },
     {
       "text": "ConvertToRGB",
@@ -1194,29 +1191,254 @@
       "signature": "clip, [bool interlaced], [string matrix], [string ChromaInPlacement], [string chromaresample]",
       "wiki": "Convert#YUV444"
     },
-    "FixLuminance",
-    "Greyscale",
-    "Invert",
-    "Levels",
-    "Limiter",
-    "MergeARGB", "MergeRGB",
-    "Merge", "MergeChroma", "MergeLuma",
-    "RGBAdjust",
-    "ShowAlpha", "ShowRed", "ShowGreen", "ShowBlue",
-    "SwapUV", "UToY", "UToY8", "VToY", "VToY8", "YToUV",
-    "Subtract",
-    "Tweak",
-    "ColorKeyMask",
-    "Layer",
-    "Mask",
-    "MaskHS",
-    "Overlay",
-    "ResetMask",
-    "AddBorders",
-    "Crop", "CropBottom",
-    "FlipHorizontal", "FlipVertical",
-    "Letterbox",
-    "ReduceBy2", "HorizontalReduceBy2", "VerticalReduceBy2",
+    {
+      "text": "FixLuminance",
+      "description": "correct a specific VCR quirk",
+      "returns": "clip",
+      "signature": "clip, int intercept, int slope",
+      "deprecated": true
+    },
+    {
+      "text": [ "Greyscale", "Grayscale" ],
+      "description": "convert to greyscale without changing the color format",
+      "returns": "clip",
+      "signature": "clip, [string matrix]"
+    },
+    {
+      "text": "Invert",
+      "description": "invert color channels",
+      "returns": "clip",
+      "signature": "clip, [string channels]"
+    },
+    {
+      "text": "Levels",
+      "description": "adjust brightness, contrast, and gamma levels like VirtualDub does",
+      "returns": "clip",
+      "signature": "clip, int input_low, float gamma, int input_high, int output_low, int output_high, [bool coring], [bool dither]"
+    },
+    {
+      "text": "Limiter",
+      "description": "filter for clipping levels to within CCIR-601 range",
+      "returns": "clip",
+      "signature": "clip, [int min_luma], [int max_luma], [int min_chroma], [int max_chroma], [string show]"
+    },
+    {
+      "text": "MergeARGB",
+      "description": "merge the channels of each of the given clips into a new RGB32 clip",
+      "returns": "clip",
+      "signature": "clip alpha, clip red, clip green, clip blue",
+      "wiki": "MergeRGB"
+    },
+    {
+      "text": "MergeRGB",
+      "description": "merge the channels of each of the given clips into a new RGB32 clip",
+      "returns": "clip",
+      "signature": "clip red, clip green, clip blue, [string pixel_type]"
+    },
+    {
+      "text": "Merge",
+      "description": "merge two clips with each other",
+      "returns": "clip",
+      "signature": "clip base, clip overlay, [float weight]"
+    },
+    {
+      "text": "MergeChroma",
+      "description": "merge only the chroma of two clips with each other",
+      "returns": "clip",
+      "signature": "clip base, clip overlay, [float weight]",
+      "wiki": "Merge#MergeChroma"
+    },
+    {
+      "text": "MergeLuma",
+      "description": "merge only the luma of two clips with each other",
+      "returns": "clip",
+      "signature": "clip base, clip overlay, [float weight]",
+      "wiki": "Merge#MergeLuma"
+    },
+    {
+      "text": "RGBAdjust",
+      "description": "adjust each color channel of an RGB clip individually",
+      "returns": "clip",
+      "signature": "clip, [float r], [float g], [float b], [float a], [float rb], [float gb], [float bb], [float ab], [float rg], [float gg], [float bg], [float ag], [bool analyze], [bool dither]"
+    },
+    {
+      "text": "ShowAlpha",
+      "description": "returns a grayscale copy of the alpha channel",
+      "returns": "clip",
+      "signature": "clip, [string pixel_type]"
+    },
+    {
+      "text": "ShowRed",
+      "description": "returns a grayscale copy of the red channel",
+      "returns": "clip",
+      "signature": "clip, [string pixel_type]",
+      "wiki": "ShowAlpha"
+    },
+    {
+      "text": "ShowGreen",
+      "description": "returns a grayscale copy of the green channel",
+      "returns": "clip",
+      "signature": "clip, [string pixel_type]",
+      "wiki": "ShowAlpha"
+    },
+    {
+      "text": "ShowBlue",
+      "description": "returns a grayscale copy of the blue channel",
+      "returns": "clip",
+      "signature": "clip, [string pixel_type]",
+      "wiki": "ShowAlpha"
+    },
+    {
+      "text": "SwapUV",
+      "description": "swaps the U and V planes",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Swap"
+    },
+    {
+      "text": "UToY",
+      "description": "copies the U plane to the Y plane",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Swap"
+    },
+    {
+      "text": "UToY8",
+      "description": "copies the U plane to a new Y8 clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Swap"
+    }, {
+      "text": "VToY",
+      "description": "copies the V plane to the Y plane",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Swap"
+    },
+    {
+      "text": "VToY8",
+      "description": "copies the V plane to a new Y8 clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Swap"
+    },
+    {
+      "text": "YToUV",
+      "description": "copies the Y planes of two clips to the UV planes",
+      "returns": "clip",
+      "signature": "clip u, clip v, [clip y]",
+      "wiki": "Swap"
+    },
+    {
+      "text": "Subtract",
+      "description": "subtracts one clip from another",
+      "returns": "clip",
+      "signature": "clip, clip"
+    },
+    {
+      "text": "Tweak",
+      "description": "tweak hue, saturation, brightness, and contrast of a YUV clip",
+      "returns": "clip",
+      "signature": "clip, [float hue], [float sat], [float bright], [float cont], [bool coring], [bool sse], [float startHue], [float endHue], [float maxSat], [float minSat], [float interp], [bool dither]"
+    },
+    {
+      "text": "ColorKeyMask",
+      "description": "clears pixels alpha channel based on a given color",
+      "returns": "clip",
+      "signature": "clip, int color, [int tolB], [int tolG], [int tolR]",
+      "wiki": "Layer#ColorKeyMask"
+    },
+    {
+      "text": "Layer",
+      "description": "layers one clip over another",
+      "returns": "clip",
+      "signature": "clip base, clip overlay, [string op], [int level], [int x], [int y], [int threshold], [bool use_chroma]"
+    },
+    {
+      "text": "Mask",
+      "description": "applies a greyscale version of the mask clip as the alpha channel of the first clip",
+      "returns": "clip",
+      "signature": "clip, clip mask",
+      "wiki": "Layer#Mask"
+    },
+    {
+      "text": "MaskHS",
+      "description": "generates a Y8 mask",
+      "returns": "clip",
+      "signature": "clip, [float startHue], [float endHue], [float maxSat], [float minSat], [bool coring]"
+    },
+    {
+      "text": "Overlay",
+      "description": "overlays a clip on top of another clip",
+      "returns": "clip",
+      "signature": "clip base, clip overlay, [int x], [int y], [clip mask], [float opacity], [string mode], [bool greymask], [string output], [bool ignore_conditional], [bool pc_range]"
+    },
+    {
+      "text": "ResetMask",
+      "description": "resets every pixel's alpha channel to full opacity",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Layer#ResetMask"
+    },
+    {
+      "text": "AddBorders",
+      "description": "add borders around a clip",
+      "returns": "clip",
+      "signature": "clip, int left, int top, int right, int bottom, [int color]"
+    },
+    {
+      "text": "Crop",
+      "description": "crop a clip to a certain area",
+      "returns": "clip",
+      "signature": "clip, int left, int top, int width, int height, [bool align]"
+    },
+    {
+      "text": "CropBottom",
+      "description": "crop the bottom count lines off a clip",
+      "returns": "clip",
+      "signature": "clip, int count",
+      "wiki": "Crop"
+    },
+    {
+      "text": "FlipHorizontal",
+      "description": "flips a clip horizontally",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Flip"
+    },
+    {
+      "text": "FlipVertical",
+      "description": "flips a clip vertically",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Flip"
+    },
+    {
+      "text": "Letterbox",
+      "description": "black out the top/bottom of a clip",
+      "returns": "clip",
+      "signature": "clip, int top, int bottom, [int left], [int right], [int color]"
+    },
+    {
+      "text": "ReduceBy2",
+      "description": "halve the size of the input clip",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "HorizontalReduceBy2",
+      "description": "halve the horizontal size of the input clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ReduceBy2"
+    },
+    {
+      "text": "VerticalReduceBy2",
+      "description": "halve the vertical size of the input clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ReduceBy2"
+    },
     {
       "text": "BilinearResize",
       "description": "resize a clip using a bilinear resize",
@@ -1355,8 +1577,7 @@
       "text": [ "BlankClip", "Blackness" ],
       "description": "generates a blank clip",
       "signature": "clip, [int length], [int width], [int height], [string pixel_type], [float fps], [int fps_denominator], [int audio_rate], [int channels], [string sample_type], [int color], [int color_yuv]",
-      "returns": "clip",
-      "wiki": true
+      "returns": "clip"
     },
     "ColorBars", "ColorBarsHD",
     "Compare",
@@ -1373,15 +1594,13 @@
       "text": "Tone",
       "description": "generates a clip that plays a tone",
       "signature": "[float length], [float frequency], [int samplerate], [int channels], [string type], [float level]",
-      "returns": "clip",
-      "wiki": true
+      "returns": "clip"
     },
     {
       "text": "Version",
       "description": "generates a short clip that shows the AviSynth version",
       "signature": "",
-      "returns": "clip",
-      "wiki": true
+      "returns": "clip"
     }
   ],
   "variables": [
