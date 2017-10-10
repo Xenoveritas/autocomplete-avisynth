@@ -1516,80 +1516,551 @@
       "returns": "clip",
       "wiki": "Resize#Spline_based_resizers"
     },
-    "SkewRows",
-    "TurnLeft", "TurnRight", "Turn180",
-    "Blur", "Sharpen",
-    "GeneralConvolution",
-    "SpatialSoften", "TemporalSoften",
-    "FixBrokenChromaUpsampling",
-    "AlignedSplice", "UnalignedSplice",
-    "AssumeFPS", "AssumeScaledFPS", "ChangeFPS", "ConvertFPS",
-    "DeleteFrame",
-    "Dissolve",
-    "DuplicateFrame",
-    "FadeIn0", "FadeOut0", "FadeIn", "FadeOut", "FadeIn2", "FadeOut2",
-    "FadeIO0", "FadeIO", "FadeIO2",
-    "FreezeFrame",
-    "Interleave",
-    "Loop",
-    "Reverse",
-    "SelectEven", "SelectOdd",
-    "SelectEvery",
-    "SelectRangeEvery",
-    "Trim",
-    "AssumeFrameBased", "AssumeFieldBased",
-    "AssumeTFF", "AssumeBFF",
-    "Bob",
-    "ComplementParity",
-    "DoubleWeave",
-    "PeculiarBlend",
-    "Pulldown",
-    "SeparateColumns", "SeparateRows",
-    "SeparateFields",
-    "SwapFields",
-    "Weave",
-    "WeaveColumns", "WeaveRows",
-    "Amplify", "AmplifydB",
-    "AssumeSampleRate",
-    "AudioDub", "AudioDubEx",
-    "AudioTrim",
-    "ConvertToMono",
-    "ConvertAudioTo8bit", "ConvertAudioTo16bit", "ConvertAudioTo24bit",
-    "ConvertAudioTo32bit", "ConvertAudioToFloat",
-    "DelayAudio",
-    "EnsureVBRMP3Sync",
-    "GetChannel",
-    "KillAudio",
-    "KillVideo",
-    "MergeChannels",
-    "MixAudio",
-    "Normalize",
-    "ResampleAudio",
-    "SSRC",
-    "SuperEQ",
-    "TimeStretch",
-    "Animate", "ApplyRange",
-    "TCPDeliver",
-    "ConditionalFilter", "FrameEvaluate", "ScriptClip", "ConditionalSelect",
-    "ConditionalReader",
-    "WriteFile", "WriteFileIf", "WriteFileStart", "WriteFileEnd",
+    {
+      "text": "SkewRows",
+      "description": "skew rows by a given number of pixels",
+      "returns": "clip",
+      "signature": "clip, int skew"
+    },
+    {
+      "text": "TurnLeft",
+      "description": "rotate a clip 90\u00B0 counterclockwise",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "TurnRight",
+      "description": "rotate a clip 90\u00B0 clockwise",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "TurnLeft"
+    },
+    {
+      "text": "Turn180",
+      "description": "rotate a clip 180\u00B0 (versus merely flipping it)",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "TurnLeft"
+    },
+    {
+      "text": "Blur",
+      "description": "blur a clip",
+      "returns": "clip",
+      "signature": [
+        "clip, float amount",
+        "clip, float horizontal, float vertical, bool mmx"
+      ]
+    },
+    {
+      "text": "Sharpen",
+      "description": "sharpen a clip",
+      "returns": "clip",
+      "signature": [
+        "clip, float amount",
+        "clip, float horizontal, float vertical, bool mmx"
+      ],
+      "wiki": "Blur"
+    },
+    {
+      "text": "GeneralConvolution",
+      "description": "performs a matrix convolution over an RGB32 clip",
+      "returns": "clip",
+      "signature": "clip, [int bias], [string matrix], [float divisor], [bool auto]"
+    },
+    {
+      "text": "SpatialSoften",
+      "description": "reduce noise by selectively blending pixels",
+      "returns": "clip",
+      "signature": "clip, int radius, int luma_threshold, int chroma_threshold",
+      "wiki": "Soften"
+    },
+    {
+      "text": "TemporalSoften",
+      "description": "reduce noise by selectively blending pixels",
+      "returns": "clip",
+      "signature": "clip, int radius, int luma_threshold, int chroma_threshold",
+      "wiki": "Soften"
+    },
+    {
+      "text": "FixBrokenChromaUpsampling",
+      "description": "fix broken chroma upsampling",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "AlignedSplice",
+      "description": "splice together input clips, keeping sound tracks synced with their clips",
+      "returns": "clip",
+      "signature": "clip, clip...",
+      "wiki": "Splice"
+    },
+    {
+      "text": "UnalignedSplice",
+      "description": "splice together input clips, concatenating video and sound tracks separately",
+      "returns": "clip",
+      "signature": "clip, clip...",
+      "wiki": "Splice"
+    },
+    {
+      "text": "AssumeFPS",
+      "description": "change the framerate without changing the number of frames, changing the playback speed",
+      "returns": "clip",
+      "signature": [
+        "clip, float fps, [bool sync_audio]",
+        "clip, int numerator, [int denominator], [bool sync_audio]",
+        "clip, clip, [bool sync_audio]",
+        "clip, string preset, [bool sync_audio]"
+      ],
+      "wiki": "FPS#AssumeFPS"
+    },
+    {
+      "text": "AssumeScaledFPS",
+      "description": "change the framerate without changing the number of frames, changing the playback speed",
+      "returns": "clip",
+      "signature": "clip, [int multiplier], [int divisor], [bool sync_audio]",
+      "wiki": "FPS#AssumeScaledFPS"
+    },
+    {
+      "text": "ChangeFPS",
+      "description": "change the framerate by duplicating or removing frames",
+      "returns": "clip",
+      "signature": [
+        "clip, float fps, [bool linear]",
+        "clip, int numerator, [int denominator], [bool linear]",
+        "clip, clip, [bool linear]",
+        "clip, string preset, [bool linear]"
+      ],
+      "wiki": "FPS#ChangeFPS"
+    },
+    {
+      "text": "ConvertFPS",
+      "description": "attempts to convert the framerate to another as smoothly as possible",
+      "returns": "clip",
+      "signature": [
+        "clip, float new_rate, [int zone], [int vbi]",
+        "clip, int numerator, [int denominator], [int zone], [int vbi]",
+        "clip, clip, [int zone], [int vbi]",
+        "clip, string preset, [int zone], [int vbi]"
+      ],
+      "wiki": "FPS#ConvertFPS"
+    },
+    {
+      "text": "DeleteFrame",
+      "description": "deletes the given frames",
+      "returns": "clip",
+      "signature": "clip, int frame..."
+    },
+    {
+      "text": "Dissolve",
+      "description": "dissolve two clips together, cross-fading between them",
+      "returns": "clip",
+      "signature": "clip, clip..., int overlap, [float fps]"
+    },
+    {
+      "text": "DuplicateFrame",
+      "description": "duplicates the given frames",
+      "returns": "clip",
+      "signature": "clip, int frame..."
+    },
+    {
+      "text": "FadeIn",
+      "description": "fade in over a given number of frames",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeOut",
+      "description": "fade out over a given number of frames",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeIO",
+      "description": "fade in and out over a given number of frames",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeIn0",
+      "description": "fade in over a given number of frames without adding a blank frame",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeOut0",
+      "description": "fade out over a given number of frames without adding a blank frame",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeIO0",
+      "description": "fade in and out over a given number of frames without adding a blank frame",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeIn2",
+      "description": "fade in over a given number of frames, adding two blank frames to the beginning",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeOut2",
+      "description": "fade out over a given number of frames, adding two blank frames the end",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FadeIO2",
+      "description": "fade in and out over a given number of frames, adding two blank frames on either end",
+      "returns": "clip",
+      "signature": "clip, int frames, [int color], [float fps]",
+      "wiki": "Fade"
+    },
+    {
+      "text": "FreezeFrame",
+      "description": "replace frames between a given section with a specific frame",
+      "returns": "clip",
+      "signature": "clip, int first_frame, int last_frame, int source_frame"
+    },
+    {
+      "text": "Interleave",
+      "description": "interleave multiple clips into one video",
+      "returns": "clip",
+      "signature": "clip, clip..."
+    },
+    {
+      "text": "Loop",
+      "description": "loop the given sequence of frames",
+      "returns": "clip",
+      "signature": "clip, [int times], [int start], [int end]"
+    },
+    {
+      "text": "Reverse",
+      "description": "reverse a clip, playing it backwards, useful for finding hidden satanic messages",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "SelectEven",
+      "description": "returns only the even frames (0-indexed), halving the frame count and frame rate",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Select"
+    },
+    {
+      "text": "SelectOdd",
+      "description": "returns only the odd frames (0-indexed), halving the frame count and frame rate",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Select"
+    },
+    {
+      "text": "SelectEvery",
+      "description": "returns specific frames every step_size frames",
+      "returns": "clip",
+      "signature": "clip, int step_size, int offset...",
+      "wiki": "Select"
+    },
+    {
+      "text": "SelectRangeEvery",
+      "description": "returns a given number of frames every set number of frames",
+      "returns": "clip",
+      "signature": "clip, [int every], [int length], [int offset], [bool audio]",
+      "wiki": "Select"
+    },
+    {
+      "text": "Trim",
+      "description": "trim a clip to a specific section",
+      "returns": "clip",
+      "signature": [
+        "clip, int start, int end, [bool pad]",
+        "clip, int start, int -duration, [bool pad]",
+        "clip, int start, end=int, [bool pad]",
+        "clip, int start, length=int, [bool pad]"
+      ]
+    },
+    {
+      "text": "AudioTrim",
+      "description": "trim a clip, including audio-only clips, to a specific section",
+      "returns": "clip",
+      "signature": [
+        "clip, float start, float end, [bool pad]",
+        "clip, float start, float -duration, [bool pad]",
+        "clip, float start, end=float, [bool pad]",
+        "clip, float start, length=float, [bool pad]"
+      ],
+      "wiki": "Trim#AudioTrim"
+    },
+    {
+      "text": "AssumeFrameBased",
+      "description": "mark the clip as being frame-based",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Parity"
+    },
+    {
+      "text": "AssumeFieldBased",
+      "description": "mark the clip as being field-based",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Parity"
+    },
+    {
+      "text": "AssumeTFF",
+      "description": "mark a clip as having the top field first",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Parity"
+    },
+    {
+      "text": "AssumeBFF",
+      "description": "mark a clip as having the bottom field first",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Parity"
+    },
+    {
+      "text": "ComplementParity",
+      "description": "inverts the assumed field order",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "Parity"
+    },
+    {
+      "text": "Bob",
+      "description": "bob-deinterlace a clip",
+      "returns": "clip",
+      "signature": "clip, [float b], [float c], [float height]"
+    },
+    {
+      "text": "DoubleWeave",
+      "description": "convert a field-based clip into a frame-based clip of the same framerate",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "PeculiarBlend",
+      "description": "blends frames in a peculiar way to fix a very specific 3:2 pulldown artifact",
+      "returns": "clip",
+      "signature": "clip, int cutoff"
+    },
+    {
+      "text": "Pulldown",
+      "description": "performs a a:b pulldown",
+      "returns": "clip",
+      "signature": "clip, int a, int b"
+    },
+    {
+      "text": "SeparateFields",
+      "description": "splits a frame-based clip into a field-based clip",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "SeparateRows",
+      "description": "splits rows from a single frame into interval frames",
+      "returns": "clip",
+      "signature": "clip, int interval",
+      "wiki": "SeparateFields"
+    },
+    {
+      "text": "SeparateColumns",
+      "description": "splits columns from a single frame into interval frames",
+      "returns": "clip",
+      "signature": "clip, int interval",
+      "wiki": "SeparateFields"
+    },
+    {
+      "text": "SwapFields",
+      "description": "swaps line 0 with 1, 2 and 3, and so on",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "Weave",
+      "description": "convert a field-based clip into a frame-based clip that halves the framerate",
+      "returns": "clip",
+      "signature": "clip"
+    },
+    {
+      "text": "WeaveColumns",
+      "description": "create a new frame by combining the columns of period frames into one",
+      "returns": "clip",
+      "signature": "clip, int period",
+      "wiki": "Weave"
+    },
+    {
+      "text": "WeaveRows",
+      "description": "create a new frame by combining rows from period frames into one",
+      "returns": "clip",
+      "signature": "clip, int period",
+      "wiki": "Weave"
+    },
+    {
+      "text": "Amplify"
+    },
+    {
+      "text": "AmplifydB"
+    },
+    {
+      "text": "AssumeSampleRate"
+    },
+    {
+      "text": "AudioDub"
+    },
+    {
+      "text": "AudioDubEx"
+    },
+    {
+      "text": "ConvertToMono"
+    },
+    {
+      "text": "ConvertAudioTo8bit"
+    },
+    {
+      "text": "ConvertAudioTo16bit"
+    },
+    {
+      "text": "ConvertAudioTo24bit"
+    },
+    {
+      "text": "ConvertAudioTo32bit"
+    },
+    {
+      "text": "ConvertAudioToFloat"
+    },
+    {
+      "text": "DelayAudio"
+    },
+    {
+      "text": "EnsureVBRMP3Sync"
+    },
+    {
+      "text": "GetChannel"
+    },
+    {
+      "text": "KillAudio"
+    },
+    {
+      "text": "KillVideo"
+    },
+    {
+      "text": "MergeChannels"
+    },
+    {
+      "text": "MixAudio"
+    },
+    {
+      "text": "Normalize"
+    },
+    {
+      "text": "ResampleAudio"
+    },
+    {
+      "text": "SSRC"
+    },
+    {
+      "text": "SuperEQ"
+    },
+    {
+      "text": "TimeStretch"
+    },
+    {
+      "text": "Animate"
+    },
+    {
+      "text": "ApplyRange"
+    },
+    {
+      "text": "TCPDeliver"
+    },
+    {
+      "text": "ConditionalFilter"
+    },
+    {
+      "text": "FrameEvaluate"
+    },
+    {
+      "text": "ScriptClip"
+    },
+    {
+      "text": "ConditionalSelect"
+    },
+    {
+      "text": "ConditionalReader"
+    },
+    {
+      "text": "WriteFile"
+    },
+    {
+      "text": "WriteFileIf"
+    },
+    {
+      "text": "WriteFileStart"
+    },
+    {
+      "text": "WriteFileEnd"
+    },
     {
       "text": [ "BlankClip", "Blackness" ],
       "description": "generates a blank clip",
       "signature": "clip, [int length], [int width], [int height], [string pixel_type], [float fps], [int fps_denominator], [int audio_rate], [int channels], [string sample_type], [int color], [int color_yuv]",
       "returns": "clip"
     },
-    "ColorBars", "ColorBarsHD",
-    "Compare",
-    "Echo",
-    "Histogram",
-    "Info",
-    "Preroll",
-    "MessageClip",
-    "ShowFiveVersions",
-    "ShowFrameNumber", "ShowSMPTE", "ShowTime",
-    "StackHorizontal", "StackVertical",
-    "Subtitle",
+    {
+      "text": "ColorBars"
+    },
+    {
+      "text": "ColorBarsHD"
+    },
+    {
+      "text": "Compare"
+    },
+    {
+      "text": "Echo"
+    },
+    {
+      "text": "Histogram"
+    },
+    {
+      "text": "Info"
+    },
+    {
+      "text": "Preroll"
+    },
+    {
+      "text": "MessageClip"
+    },
+    {
+      "text": "ShowFiveVersions"
+    },
+    {
+      "text": "ShowFrameNumber"
+    },
+    {
+      "text": "ShowSMPTE"
+    },
+    {
+      "text": "ShowTime"
+    },
+    {
+      "text": "StackHorizontal"
+    },
+    {
+      "text": "StackVertical"
+    },
+    {
+      "text": "Subtitle"
+    },
     {
       "text": "Tone",
       "description": "generates a clip that plays a tone",
