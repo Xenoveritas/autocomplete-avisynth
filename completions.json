@@ -1906,160 +1906,353 @@
       "wiki": "Weave"
     },
     {
-      "text": "Amplify"
+      "text": "Amplify",
+      "description": "amplify audio in a clip",
+      "returns": "clip",
+      "signature": "clip, float..."
     },
     {
-      "text": "AmplifydB"
+      "text": "AmplifydB",
+      "description": "amplify audio in a clip by a given number of dBs",
+      "returns": "clip",
+      "signature": "clip, float...",
+      "wiki": "Amplify"
     },
     {
-      "text": "AssumeSampleRate"
+      "text": "AssumeSampleRate",
+      "description": "change the sample playback rate without converting data, changing playback time",
+      "returns": "clip",
+      "signature": "clip, int samplerate"
     },
     {
-      "text": "AudioDub"
+      "text": "AudioDub",
+      "description": "dubs a video clip with audio from an audio clip (reversing the arguments if the first clip is audio-only and the second has video)",
+      "returns": "clip",
+      "signature": "clip video, clip audio"
     },
     {
-      "text": "AudioDubEx"
+      "text": "AudioDubEx",
+      "description": "dubs a video clip with audio from an audio clip",
+      "returns": "clip",
+      "signature": "clip video, clip audio",
+      "wiki": "AudioDub"
     },
     {
-      "text": "ConvertToMono"
+      "text": "ConvertToMono",
+      "description": "merges all audio channels to a single mono channel",
+      "returns": "clip",
+      "signature": "clip"
     },
     {
-      "text": "ConvertAudioTo8bit"
+      "text": "ConvertAudioTo8bit",
+      "description": "convert audio samples to 8-bit integers",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ConvertAudio"
     },
     {
-      "text": "ConvertAudioTo16bit"
+      "text": "ConvertAudioTo16bit",
+      "description": "convert audio samples to 16-bit integers",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ConvertAudio"
     },
     {
-      "text": "ConvertAudioTo24bit"
+      "text": "ConvertAudioTo24bit",
+      "description": "convert audio samples to 24-bit integers",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ConvertAudio"
     },
     {
-      "text": "ConvertAudioTo32bit"
+      "text": "ConvertAudioTo32bit",
+      "description": "convert audio samples to 32-bit integers",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ConvertAudio"
     },
     {
-      "text": "ConvertAudioToFloat"
+      "text": "ConvertAudioToFloat",
+      "description": "convert audio samples to 32-bit floating point",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "ConvertAudio"
     },
     {
-      "text": "DelayAudio"
+      "text": "DelayAudio",
+      "description": "delays audio by a given number of seconds (negative trims audio)",
+      "returns": "clip",
+      "signature": "clip, float seconds"
     },
     {
-      "text": "EnsureVBRMP3Sync"
+      "text": "EnsureVBRMP3Sync",
+      "description": "ensures synchronization with video when seeking or trimming",
+      "returns": "clip",
+      "signature": "clip"
     },
     {
-      "text": "GetChannel"
+      "text": [ "GetChannel", "GetChannels" ],
+      "description": "reduces the number of audio channels to the specific channels (1-indexed)",
+      "returns": "clip",
+      "signature": "clip, int...",
+      "wiki": "GetChannel"
     },
     {
-      "text": "KillAudio"
+      "text": "GetLeftChannel",
+      "description": "gets the left audio channel from a stereo clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "GetChannel"
     },
     {
-      "text": "KillVideo"
+      "text": "GetRightChannel",
+      "description": "gets the right audio channel from a stereo clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "GetChannel"
     },
     {
-      "text": "MergeChannels"
+      "text": "KillAudio",
+      "description": "removes the audio from a clip",
+      "returns": "clip",
+      "signature": "clip"
     },
     {
-      "text": "MixAudio"
+      "text": "KillVideo",
+      "description": "removes the video from a clip",
+      "returns": "clip",
+      "signature": "clip",
+      "wiki": "KillAudio"
     },
     {
-      "text": "Normalize"
+      "text": "MergeChannels",
+      "description": "adds (not mixes) the audio channels from the clips into the first clip",
+      "returns": "clip",
+      "signature": "clip, clip..."
     },
     {
-      "text": "ResampleAudio"
+      "text": "MixAudio",
+      "description": "mixes the audio in two clips with the same number of channels",
+      "returns": "clip",
+      "signature": "clip a, clip b, [float factor_a], [float factor_b]"
     },
     {
-      "text": "SSRC"
+      "text": "Normalize",
+      "description": "amplifies all audio to the given level",
+      "returns": "clip",
+      "signature": "clip, [float volume], [bool show]"
     },
     {
-      "text": "SuperEQ"
+      "text": "ResampleAudio",
+      "description": "resamples audio to the given rate",
+      "returns": "clip",
+      "signature": "clip, int new_rate_numerator, [int new_rate_denominator]"
     },
     {
-      "text": "TimeStretch"
+      "text": "SSRC",
+      "description": "high-quality audio resampling",
+      "returns": "clip",
+      "signature": "clip, int samplerate, [bool fast]"
     },
     {
-      "text": "Animate"
+      "text": "SuperEQ",
+      "description": "applies a foobar2000 equalizer settings file",
+      "returns": "clip",
+      "signature": [
+        "clip, string filename",
+        "clip, float band..."
+      ]
     },
     {
-      "text": "ApplyRange"
+      "text": "TimeStretch",
+      "description": "change pitch/tempo/sample rate without effecting the others",
+      "returns": "clip",
+      "signature": "clip, [float tempo], [float rate], [float pitch], [int sequence], [int seekwindow], [int overlap], [bool quickseek], [int aa]"
     },
     {
-      "text": "TCPDeliver"
+      "text": "Animate",
+      "description": "animate filters by changing parameters over time",
+      "returns": "clip",
+      "signature": "clip, int start_frame, int end_frame, string filtername, val start_args..., val end_args..."
     },
     {
-      "text": "ConditionalFilter"
+      "text": "ApplyRange",
+      "description": "apply a filter to only a certain set of frames",
+      "returns": "clip",
+      "signature": "clip, int start_frame, int end_frame, string filtername, val args..."
     },
     {
-      "text": "FrameEvaluate"
+      "text": "TCPServer",
+      "description": "start AviSynth server on the given port",
+      "returns": "clip",
+      "signature": "clip, [int port]"
     },
     {
-      "text": "ScriptClip"
+      "text": "TCPSource",
+      "description": "connect to an AviSynth server on the given port",
+      "returns": "clip",
+      "signature": "clip, [int port], [string compression]",
+      "wiki": "TCPServer"
     },
     {
-      "text": "ConditionalSelect"
+      "text": "ConditionalFilter",
+      "description": "conditionally return source1 or source2 based on the expression",
+      "returns": "clip",
+      "signature": "clip testclip, clip source1, clip source2, string expression1, string operator, string expression2, [bool show]"
     },
     {
-      "text": "ConditionalReader"
+      "text": "ConditionalSelect",
+      "description": "select a clip based on the value of expression",
+      "returns": "clip",
+      "signature": "clip testclip, string expression, clip source0, clip source1, clip source2..., [bool show]",
+      "wiki": "ConditionalFilter"
     },
     {
-      "text": "WriteFile"
+      "text": "ScriptClip",
+      "description": "evaluate script for each frame",
+      "returns": "clip",
+      "signature": "clip, string filter, [bool show], [bool after_frame]",
+      "wiki": "ConditionalFilter"
     },
     {
-      "text": "WriteFileIf"
+      "text": "FrameEvaluate",
+      "description": "evaluate script for each frame, ignoring the result",
+      "returns": "clip",
+      "signature": "clip clip, script filter, [bool after_frame]",
+      "wiki": "ConditionalFilter"
     },
     {
-      "text": "WriteFileStart"
+      "text": "ConditionalReader",
+      "description": "imports values from a file name into a variable that changes each frame",
+      "returns": "clip",
+      "signature": "clip, string filename, string variablename, [bool show]"
     },
     {
-      "text": "WriteFileEnd"
+      "text": "WriteFile",
+      "description": "writes the evaulation of an expression to a file",
+      "returns": "clip",
+      "signature": "clip, string filename, string expression..., [bool append], [bool flush]"
+    },
+    {
+      "text": "WriteFileIf",
+      "description": "writes the evaulation of an expression to a file if the first expression is true",
+      "returns": "?",
+      "signature": "clip, string filename, string expression..., [bool append], [bool flush]",
+      "wiki": "WriteFile"
+    },
+    {
+      "text": "WriteFileStart",
+      "description": "writes the evaulation of an expression when the script is opened",
+      "returns": "?",
+      "signature": "clip, string filename, string expression..., [bool append]",
+      "wiki": "WriteFile"
+    },
+    {
+      "text": "WriteFileEnd",
+      "description": "writes the evaulation of an expression when the script is closed",
+      "returns": "?",
+      "signature": "clip, string filename, string expression..., [bool append]",
+      "wiki": "WriteFile"
     },
     {
       "text": [ "BlankClip", "Blackness" ],
       "description": "generates a blank clip",
-      "signature": "clip, [int length], [int width], [int height], [string pixel_type], [float fps], [int fps_denominator], [int audio_rate], [int channels], [string sample_type], [int color], [int color_yuv]",
-      "returns": "clip"
+      "returns": "clip",
+      "signature": "clip, [int length], [int width], [int height], [string pixel_type], [float fps], [int fps_denominator], [int audio_rate], [int channels], [string sample_type], [int color], [int color_yuv]"
     },
     {
-      "text": "ColorBars"
+      "text": "ColorBars",
+      "description": "generates a clip that shows SMPTE color bars",
+      "returns": "clip",
+      "signature": "[int width], [int height], [string pixel_type]"
     },
     {
-      "text": "ColorBarsHD"
+      "text": "ColorBarsHD",
+      "description": "generates a clip that shows HD SMPTE color bars",
+      "returns": "clip",
+      "signature": "[int width], [int height], [string pixel_type]",
+      "wiki": "ColorBars#ColorBarsHD"
     },
     {
-      "text": "Compare"
+      "text": "Compare",
+      "description": "compare original to filtered and overlay results on filtered",
+      "returns": "clip",
+      "signature": "clip filtered, clip original, [string channels], [string logfile], [bool show_graph]"
     },
     {
-      "text": "Echo"
+      "text": "Echo",
+      "description": "forces AviSynth to fetch frames from input clips, returning the first clip",
+      "returns": "clip",
+      "signature": "clip..."
     },
     {
-      "text": "Histogram"
+      "text": "Histogram",
+      "description": "overlays a histrogram onto the input clip",
+      "returns": "clip",
+      "signature": "clip, [string mode], [float factor]"
     },
     {
-      "text": "Info"
+      "text": "Info",
+      "description": "overlays clip info on the clip",
+      "returns": "clip",
+      "signature": "clip"
     },
     {
-      "text": "Preroll"
+      "text": "Preroll",
+      "description": "pre-fetch frames after any seek",
+      "returns": "clip",
+      "signature": "clip, [int video], [float audio]"
     },
     {
-      "text": "MessageClip"
+      "text": "MessageClip",
+      "description": "generate a clip showing the given message",
+      "returns": "clip",
+      "signature": "string message, [int width], [int height], [bool shrink], [int text_color], [int halo_color], [int bg_color]"
     },
     {
-      "text": "ShowFiveVersions"
+      "text": "ShowFiveVersions",
+      "description": "show five clips",
+      "returns": "clip",
+      "signature": "clip clip1, clip clip2, clip clip3, clip clip4, clip clip5"
     },
     {
-      "text": "ShowFrameNumber"
+      "text": "ShowFrameNumber",
+      "description": "overlay clip with the frame number AviSynth uses for each frame",
+      "returns": "clip",
+      "signature": "clip, [bool scroll], [int offset], [float x], [float y], [string font], [float size], [int text_color], [int halo_color], [float font_width], [float font_angle]"
     },
     {
-      "text": "ShowSMPTE"
+      "text": "ShowSMPTE",
+      "description": "overlay clip with the SMPTE time code for each frame",
+      "returns": "clip",
+      "signature": "clip, [float fps], [string offset], [int offset_f], [float x], [float y], [string font], [float size], [int text_color], [int halo_color], [float font_width], [float font_angle]",
+      "wiki": "ShowFrameNumber#ShowSMPTE"
     },
     {
-      "text": "ShowTime"
+      "text": "ShowTime",
+      "description": "overlay clip with the time for each frame",
+      "returns": "clip",
+      "signature": "clip, [int offset_f], [float x], [float y], [string font], [float size], [int text_color], [int halo_color], [float font_width], [float font_angle]",
+      "wiki": "ShowFrameNumber#ShowTime"
     },
     {
-      "text": "StackHorizontal"
+      "text": "StackHorizontal",
+      "description": "stacks input clips horizontally left-to-right",
+      "returns": "clip",
+      "signature": "clip, clip..."
     },
     {
-      "text": "StackVertical"
+      "text": "StackVertical",
+      "description": "stacks input clips vertically top-to-bottom",
+      "returns": "clip",
+      "signature": "clip, clip...",
+      "wiki": "StackHorizontal"
     },
     {
-      "text": "Subtitle"
+      "text": "Subtitle",
+      "description": "overlay clip with text",
+      "returns": "clip",
+      "signature": "clip, string text, [float x], [float y], [int first_frame], [int last_frame], [string font], [float size], [int text_color], [int halo_color], [int align], [int spc], [int lsp], [float font_width], [float font_angle], [bool interlaced]"
     },
     {
       "text": "Tone",
