@@ -6,6 +6,38 @@
     "try",
     "catch"
   ],
+  "types": [
+    {
+      "text": "clip",
+      "description": "video/audio clip",
+      "wiki": "Script_variables"
+    },
+    {
+      "text": "string",
+      "description": "sequence of characters",
+      "wiki": "Script_variables"
+    },
+    {
+      "text": "int",
+      "description": "32-bit integer",
+      "wiki": "Script_variables"
+    },
+    {
+      "text": "float",
+      "description": "32-bit floating point value",
+      "wiki": "Script_variables"
+    },
+    {
+      "text": "bool",
+      "description": "boolean value (true or false)",
+      "wiki": "Script_variables"
+    },
+    {
+      "text": "val",
+      "description": "any AviSynth type",
+      "wiki": "Script_variables"
+    }
+  ],
   "functions": [
     {
       "text": "Max",
@@ -2292,6 +2324,11 @@
       "text": "OPT_AVIPadScanlines",
       "description": "set whether to use DWORD planar padding",
       "wiki": "Internal_functions#OPT_AVIPadScanlines"
+    },
+    {
+      "text": "last",
+      "description": "result of the previous line (if a clip and not assigned to a variable)",
+      "wiki": "Grammar"
     }
   ]
 }
