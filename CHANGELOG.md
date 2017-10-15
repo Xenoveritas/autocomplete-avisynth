@@ -1,6 +1,7 @@
 ## 0.2.0
 
-* Improve completions in specific contexts.
+* Add type completions when writing function declarations.
+* When completing after a `"."` show completions that use the AviSynth clip "object oriented" syntax.
 
 ## 0.1.0 - Initial release
 
